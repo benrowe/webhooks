@@ -1,13 +1,50 @@
 {
     "name": "benrowe/webhooks",
     "description": "A agnostic package for publishing internal events externally via webhooks",
+    "keywords": [
+        "webhooks",
+        "events"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Ben Rowe",
-            "email": "ben.rowe.83@gmail.com"
+            "email": "ben.rowe.83@gmail.com",
+            "homepage": "http://benrowe.info",
+            "role": "Developer"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "~7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~5.0",
+        "squizlabs/php_codesniffer": "^2.3",
+        "scrutinizer/ocular": "^1.3",
+        "phpmd/phpmd": "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "Benrowe\\Webhooks\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Benrowe\\Webhook\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
 }
