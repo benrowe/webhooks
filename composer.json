@@ -1,0 +1,13 @@
+{
+    "name": "benrowe/webhooks",
+    "description": "A agnostic package for publishing internal events externally via webhooks",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ben Rowe",
+            "email": "ben.rowe.83@gmail.com"
+        }
+    ],
+    "require": {}
+}
