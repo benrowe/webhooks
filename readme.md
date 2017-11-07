@@ -22,7 +22,13 @@ $ composer require benrowe/webhooks
 ``` php
 <?php
 
+$webhookService = new \Benrowe\Webhooks\WebhookService();
+$webhook = new \Benrowe\Webhooks\Webhook('http://localhost/path/to/call');
+$webhook->listenTo(MyEvent::class);
+$webhookService->subscribe($webhook);
 
+// later
+$webhookService->dispatchEvent(new MyEvent, $payload);
 ```
 
 ## Change log
@@ -68,8 +74,6 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-contributors]: ../../contributors
 
 ## Notes
-
-
 
 ### Service Interface
 
